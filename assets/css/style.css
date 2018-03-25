@@ -97,6 +97,7 @@ h2 {
 	color: #444;
 	font-size: 25px;
 	position: relative;
+	text-align: center;
 }
 .section-title > h2::after {
 	background: #666;
@@ -236,7 +237,7 @@ h2 {
 }
 .site-header.sticky {
 	background: #fff;
-	animation: fadeInDown .5s linear;
+	animation: fadeInDown .8s linear;
 	position: fixed;
 	top: 0px;
 	width: 100%;
@@ -374,6 +375,8 @@ a.logo {
 	height: auto;
 	max-width: 100%;
 }
+
+
 .social-media {
 	text-align: center;
 	margin: 14px 0px;
@@ -403,6 +406,10 @@ a.logo {
 }
 .download-cv a:hover{
 	background: #000;
+}
+
+.text-center {
+	text-align: center;
 }
 
 /*==================================
@@ -663,6 +670,12 @@ li.filter.mixitup-control-active:after {
 /*==========================================
 		Start contact area
 =============================================*/
+#contact {
+	max-width: 70%;
+	padding-left:15%;
+	padding-right:15%;
+}
+
 input.controler {
 	font-size: 14px;
 	margin-bottom: 12px;
