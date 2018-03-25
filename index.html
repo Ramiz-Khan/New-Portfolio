@@ -408,7 +408,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="contact-form wow fadeInUp" data-wow-delay=".4">
-                        <form action="https://hooks.zapier.com/hooks/catch/3095507/kgwrmb/" method="post">
+                        <form method="post">
                             <div class="single col-md-6">
                                 <input type="text"  name="name" class="controler" placeholder="input your name" required="">
                             </div>
@@ -419,7 +419,7 @@
                                 <textarea name="textarea" id="message" cols="25" rows="10" placeholder="write message"></textarea>
                             </div>
                             <div class="form-submit text-center">
-                                <input type="submit" onclick="window.location.href = '/';" name="comment-sub" value="submit">
+                                <input type="submit" name="comment-sub" value="submit">
                             </div>
                         </form>
                     </div>
@@ -448,7 +448,16 @@
             </div>
         </div>
     </footer><!--End footer area-->
-
+    <script type="text/javascript">
+        $(function() {
+          $('form').submit(function(){
+            $.post('https://hooks.zapier.com/hooks/catch/3095507/kgwrmb/', function() {
+              window.location = 'https://ramiz-khan.github.io/New-Portfolio/';
+            });
+            return false;
+          });
+        });
+        </script>
 	<!--main js-->
 	<script src="assets/js/jquery-1.12.4.min.js"></script>
 	<!--bootstrap js-->
