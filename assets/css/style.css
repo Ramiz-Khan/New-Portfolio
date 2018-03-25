@@ -672,7 +672,11 @@ li.filter.mixitup-control-active:after {
 		padding-left:15%;
 		padding-right:15%;
 }
-
+#bio {
+	max-width: 70%;
+	padding-left:15%;
+	padding-right:15%;
+}
 /*==========================================
 		Start contact area
 =============================================*/
