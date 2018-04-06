@@ -109,19 +109,27 @@
                         </ul>
                     </div>
                     <div class="admin-details text-center wow fadeInUp" id="bio" data-wow-delay=".7s">
-                        <p>I'm a 26-year-old marketing professional and full-stack web developer with marketing execution &amp; management experience at growth-stage startup companies. I'm an easy going, disciplined individual with a never-ending need for growth, both personally and professionally. 
+                        <p>I'm a 26-year-old marketing professional and full-stack web developer with marketing strategy, execution &amp; management experience with growth-stage tech companies. I'm an easy going, disciplined individual with a never-ending need for growth, both personally and professionally. 
 
-                            I have a passion for digital marketing, public relations, and guerrilla marketing tactics. I've acquired significant experience in the strategy, planning, creation, and execution stages of each discipline, crafted to work together towards an integrated marketing strategy that I developed. 
+                            I have a passion for digital marketing, creating and delivering intuitive easy-to-use applications, and having a hand in growing interesting companies. I've acquired significant experience in the strategy, planning, creation, and execution phases of many disciplines within digital marketing. I create campaigns and initiatives that are crafted to work together to create an integrated marketing strategy that delivers and stays on brand. 
                             
-                            In my spare time, outside of staying active and networking, I take on freelance marketing and public relations projects to further my skill set.</p>
+                            In my spare time, outside of staying active and networking, I take on freelance marketing and development projects to further my skill set.</p>
+
                         <div class="download-cv animated flip">
                             <a href="https://dl.dropboxusercontent.com/s/l3bxsit81s57xl1/resBR.pdf?dl=0">download my resume</a>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </section><!--End about area-->
+    </section>
+    
+    <div style="padding: 15px; text-align: center;">
+        <p><i>Please <a href="https://dl.dropboxusercontent.com/s/l3bxsit81s57xl1/resBR.pdf?dl=0">download my resume</a> above. <br/>Fill the form below to contact me.</i></p>
+    </div>
+    
+    <!--End about area-->
 
     <!--Start service section-->
  <!-- <section class="service-area section-padding bgcolor1" id="service">
@@ -408,7 +416,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="contact-form wow fadeInUp" data-wow-delay=".4">
-                        <form method="post">
+                        <form id="myForm">
                             <div class="single col-md-6">
                                 <input type="text"  name="name" class="controler" placeholder="input your name" required="">
                             </div>
@@ -419,7 +427,7 @@
                                 <textarea name="textarea" id="message" cols="25" rows="10" placeholder="write message"></textarea>
                             </div>
                             <div class="form-submit text-center">
-                                <input type="submit" name="comment-sub" value="submit">
+                                <input type="submit" name="comment-sub" value="submit" onCLick="window.location('/')'">
                             </div>
                         </form>
                     </div>
@@ -440,7 +448,7 @@
                                 <li><a href="https://www.facebook.com/ramiz.khan.3990"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="https://twitter.com/ramizkhan2"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/ramiz-khan-50bb5257/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="https://github.com/Ramiz-Khan/"><i class="fab fa-giithub-square" aria-hidden="true"></i></a></li>
+                                <li><a href="https://github.com/Ramiz-Khan/"><i class="fab fa-github-square" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -448,16 +456,22 @@
             </div>
         </div>
     </footer><!--End footer area-->
-    <script type="text/javascript">
-        $(function() {
-          $('form').submit(function(){
-            $.post('https://hooks.zapier.com/hooks/catch/3095507/kgwrmb/', function() {
-              window.location = 'https://ramiz-khan.github.io/New-Portfolio/';
+
+        <script>
+            // POST form data to zapier on submit
+            $('#myForm').submit(function(e){
+              e.preventDefault();
+              $.ajax({
+                  url:'https://hooks.zapier.com/hooks/catch/3095507/kgwrmb/',
+                  type:'post',
+                  data:$('#myForm').serialize(),
+                  success:function(){
+                    // Change URL to page you would like to send the user after form is submitted
+                    window.location = "http://.com";
+                  }
+              });
             });
-            return false;
-          });
-        });
-        </script>
+            </script>
 	<!--main js-->
 	<script src="assets/js/jquery-1.12.4.min.js"></script>
 	<!--bootstrap js-->
